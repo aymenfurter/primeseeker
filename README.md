@@ -1,7 +1,7 @@
-Prime Number Predictor
+Primeseeker - Prime Number Predictor
 ======================
 
-This project contains a model that can predict whether or not a number is prime. The model is implemented using PyTorch, and it consists of a feedforward neural network with three hidden layers.
+This project contains a model that aims to predict whether or not a number is prime. The model is implemented using PyTorch, and it consists of a feedforward neural network with three hidden layers. So far the model usually ends up reporting that no number is prime (which is true the majority of the time). The training data generating may need some tweaking.
 
 Getting Started
 ---------------
