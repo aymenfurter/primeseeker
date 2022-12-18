@@ -53,11 +53,33 @@ num_digits = []
 sum_all_digits = []
 labels = []  # 0 for not prime, 1 for prime
 
+numberOfPrimes = 0
+numbersOfNonPrime = 0
+
 # iterate over the first 100,000 numbers
-for i in range(1, 1000000):
+for i in range(1, 10000000):
     # determine if the number is prime or not
     prime = is_prime(i)
 
+    if i % 10000 == 0:
+      ratio = numberOfPrimes / (numberOfPrimes + numbersOfNonPrime)
+      print(f"Ratio of prime numbers at {i}: {ratio}")
+
+
+    if prime and numberOfPrimes > numbersOfNonPrime:
+      continue
+
+    if not prime and numbersOfNonPrime > numberOfPrimes:
+      continue
+
+
+    if prime:
+      numberOfPrimes = numberOfPrimes + 1
+
+    if not prime:
+      numbersOfNonPrime = numbersOfNonPrime +1
+      
+    
     # calculate the sum of the digits
     digits = [int(d) for d in str(i)]
     digit_sum = sum(digits)
@@ -86,6 +108,7 @@ print("Size of training data:", len(data))
 print("Sample data:")
 for i in range(2):
   print(data[i])
+
 
 
 from sklearn.model_selection import train_test_split
